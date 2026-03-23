@@ -1,0 +1,55 @@
+{
+  "row1": [
+    {
+      "name": "Dawon Ahn",
+      "position": "PhD Student",
+      "affiliation": "University of California, Riverside",
+      "image": "images/dawon.jpg",
+      "url": "https://dawonahn.github.io/"
+    },
+    {
+      "name": "Yong-Chan Park",
+      "position": "Postdoctoral Researcher",
+      "affiliation": "Seoul National University",
+      "image": "images/cat.png",
+      "url": "https://yongchanpark.github.io/"
+    },
+    {
+      "name": "Taehyung Kwon",
+      "position": "Postdoctoral Researcher",
+      "affiliation": "KAIST",
+      "image": "images/taehyungkwon.jpg",
+      "url": "https://kbrother.github.io/"
+    }
+  ],
+  "row2": [
+    {
+      "name": "Jun-Gi Jang",
+      "position": "Assistant Professor",
+      "affiliation": "DGIST",
+      "image": "images/jungijang.png",
+      "url": "https://jungijang.github.io/"
+    },
+    {
+      "name": "Kijung Shin",
+      "position": "Associate Professor",
+      "affiliation": "KAIST",
+      "image": "images/kijungshin.jpg",
+      "url": "https://kijungs.github.io/"
+    },
+    {
+      "name": "U Kang",
+      "position": "Professor",
+      "affiliation": "Seoul National University",
+      "image": "images/ukang.png",
+      "url": "https://datalab.snu.ac.kr/~ukang/"
+    },
+    {
+      "name": "Evangelos E. Papalexakis",
+      "position": "Professor",
+      "affiliation": "University of California, Riverside",
+      "image": "images/vagelis.jpg",
+      "url": "https://www.cs.ucr.edu/~epapalex/"
+    }
+  ]
+}

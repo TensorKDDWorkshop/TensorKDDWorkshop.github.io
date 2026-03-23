@@ -1,0 +1,16 @@
+[
+  {
+    "name": "Nikolaos (Nikos) D. Sidiropoulos",
+    "affiliation": "University of Virginia",
+    "image": "images/cat.png",
+    "url": "https://nikossidiropoulos.github.io/",
+    "talk": "Talk Title TBD"
+  },
+  {
+    "name": "Grigoris Chrysos",
+    "affiliation": "University of Wisconsin-Madison",
+    "image": "images/grigoris.jpeg",
+    "url": "https://grigoris.ece.wisc.edu/",
+    "talk": "Talk Title TBD"
+  }
+]

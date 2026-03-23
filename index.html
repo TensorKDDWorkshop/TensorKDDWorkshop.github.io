@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Interplay of Classical Tensor Methods and Foundation Models</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  margin: 0;
+  background: white;
+  color: #5c5c5c;
+  font-size: 17px;
+}
+
+/* ── Navbar ── */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: white;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.navbar-inner {
+  max-width: 880px;
+  margin: auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 92px;
+}
+
+.navbar-logo {
+  font-weight: 700;
+  font-size: 17px;
+  color: #1a1a1a;
+  text-decoration: none;
+  letter-spacing: -0.3px;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 4px;
+}
+
+.navbar-links a {
+  color: #555;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 6px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.navbar-links a:hover {
+  color: #1a1a1a;
+}
+
+.navbar-links a.active {
+  color: #5A9F67;
+  font-weight: 700;
+}
+
+/* ── Hero ── */
+.hero {
+  position: relative;
+  padding: 72px 40px;
+  scroll-margin-top: 110px;
+  overflow: hidden;
+  min-height: 245px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url('images/main_optimized.png') center/cover no-repeat;
+  z-index: 0;
+}
+
+.hero-inner {
+  position: relative;
+  z-index: 2;
+  padding: 40px 52px;
+  max-width: 858px;
+  text-align: center;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 35px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 12px;
+  letter-spacing: -0.3px;
+  color: white;
+}
+
+.hero h3 {
+  font-size: 17px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.85);
+  margin: 0;
+}
+
+/* ── Sections ── */
+.section {
+  padding: 72px 40px;
+  scroll-margin-top: 110px;
+}
+
+.section-inner {
+  max-width: 880px;
+  margin: auto;
+  text-align: center;
+}
+
+#overview .section-inner,
+#cfp .section-inner {
+  text-align: left;
+}
+
+.section h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 28px;
+  letter-spacing: -0.3px;
+  text-align: left;
+}
+
+#overview h2 { color: #5A9F67; }
+
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 28px;
+}
+
+.overview-block h3 {
+  font-size: 17px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.overview-block ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-size: inherit;
+  line-height: 1.7;
+  color: #555;
+}
+
+.overview-block li {
+  margin-bottom: 10px;
+}
+
+.scope-category,
+.guideline-category {
+  font-weight: 700;
+  color: #444;
+}
+
+#overview p, #cfp p {
+  font-size: inherit;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* ── Dates ── */
+.date-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.date-box li {
+  padding: 10px 0;
+  font-size: inherit;
+  color: #444;
+  border-bottom: 1px solid #f0f0f0;
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.date-box li:last-child { border-bottom: none; }
+
+.date-box li::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #1a1a1a;
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+/* ── CFP ── */
+
+.cfp-list {
+  font-size: inherit;
+  line-height: 2;
+  color: #444;
+  padding-left: 20px;
+}
+
+/* ── Speakers ── */
+.speakers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: left;
+}
+
+.speaker-card {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 20px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.speaker-card:last-child { border-bottom: none; }
+
+.speaker-card img {
+  width: 90px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.speaker-name {
+  font-weight: 600;
+  font-size: inherit;
+  color: #1a1a1a;
+  margin-bottom: 3px;
+}
+
+.speaker-affil {
+  font-size: 15px;
+  color: #888;
+  margin-bottom: 6px;
+}
+
+.speaker-talk {
+  font-size: inherit;
+  color: #555;
+  font-style: italic;
+}
+
+/* ── Organizers ── */
+.organizers-row3 {
+  display: grid;
+  grid-template-columns: repeat(3, 220px);
+  gap: 40px;
+  justify-content: center;
+  margin: 0 auto 40px;
+}
+
+.organizers-row4 {
+  display: grid;
+  grid-template-columns: repeat(4, 220px);
+  gap: 40px;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.organizer-card { text-align: center; }
+
+.organizer-card img {
+  width: 110px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.organizer-name {
+  font-weight: 600;
+  font-size: 15px;
+  color: #1a1a1a;
+}
+
+.organizer-affil {
+  font-size: 14px;
+  color: #888;
+  margin-top: 3px;
+  line-height: 1.4;
+}
+
+.section a { color: #5A9F67; }
+
+/* ── Footer ── */
+.footer {
+  background: #1a1a1a;
+  color: #999;
+  text-align: center;
+  padding: 32px 40px;
+  font-size: 13px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+<div class="navbar-inner">
+<a class="navbar-logo" href="#home">TensorKDD 2026</a>
+<div class="navbar-links">
+<a href="#home">Home</a>
+<a href="#dates">Dates</a>
+<a href="#cfp">Call for Papers</a>
+<a href="#speakers">Speakers</a>
+<a href="#organizers">Organizers</a>
+</div>
+</div>
+</div>
+
+<!-- Hero -->
+<div class="hero" id="home">
+<div class="hero-inner">
+<h1>The 1st KDD workshop on Interplay of Classical Tensor Methods and Foundation Models</h1>
+<h3>KDD 2026 Workshop &nbsp;·&nbsp; Jeju Island, South Korea</h3>
+<p style="margin:10px 0 0;color:rgba(255,255,255,0.8);">Sunday, August 9, 2026 &nbsp;·&nbsp; Half Day (3 hours) &nbsp;·&nbsp; Time TBD</p>
+</div>
+</div>
+
+<!-- Overview -->
+<div class="section" id="overview">
+<div class="section-inner">
+<h2>Welcome to TensorKDD!</h2>
+<div id="overview-content"></div>
+</div>
+</div>
+
+<!-- Important Dates -->
+<div class="section" id="dates" style="background:#fafafa;">
+<div class="section-inner">
+<h2>Important Dates</h2>
+<div class="date-box">
+<ul>
+<li><b>Paper Submission:</b> April 30, 2026</li>
+<li><b>Paper Notification:</b> June 4, 2026</li>
+<li><b>Camera-Ready:</b> June 22, 2026</li>
+<li><b>Workshop Date:</b> August 9, 2026</li>
+</ul>
+<p style="color:#888;margin-top:16px;text-align:left;font-size:14px;">All deadlines are at 11:59 PM AOE (Anywhere on Earth).</p>
+</div>
+</div>
+</div>
+
+<!-- Call for Papers -->
+<div class="section" id="cfp">
+<div class="section-inner">
+<h2>Call for Papers</h2>
+<div id="cfp-topics"></div>
+<div id="cfp-submission"></div>
+</div>
+</div>
+
+<!-- Invited Speakers -->
+<div class="section" id="speakers" style="background:#fafafa;">
+<div class="section-inner">
+<h2>Invited Speakers</h2>
+<div class="speakers-list" id="speakers-list"></div>
+</div>
+</div>
+
+<!-- Organizers -->
+<div class="section" id="organizers">
+<div class="section-inner">
+<h2>Organizers</h2>
+<div class="organizers-row3" id="organizers-row1"></div>
+<div class="organizers-row4" id="organizers-row2"></div>
+<!-- <p style="margin-top:40px;text-align:center;color:#888;">For questions please contact: <a href="mailto:tensorworkshop.kdd@gmail.com">tensorworkshop.kdd@gmail.com</a></p> -->
+ <p style="margin-top:40px;text-align:center;color:#888;">For questions please contact: <a href="mailto:tensorworkshop.kdd@gmail.com">kddtensorworkshop@gmail.com</a></p>
+</div>
+</div>
+
+<div class="footer">
+Tensor Methods Workshop · KDD 2026 · Jeju Island, South Korea
+</div>
+
+<script>
+function makeSpeakerCard(person) {
+  return `<div class="speaker-card">
+    <a href="${person.url}"><img src="${person.image}" alt="${person.name}"></a>
+    <div class="speaker-info">
+      <div class="speaker-name">${person.name}</div>
+      <div class="speaker-affil">${person.affiliation}</div>
+      <div class="speaker-talk">${person.talk}</div>
+    </div>
+  </div>`;
+}
+
+function makeCard(person) {
+  return `<div class="organizer-card">
+    <a href="${person.url}"><img src="${person.image}" alt="${person.name}"></a>
+    <div class="organizer-name">${person.name}</div>
+    <div class="organizer-affil">${person.position}</div>
+    <div class="organizer-affil">${person.affiliation}</div>
+  </div>`;
+}
+
+const navLinks = document.querySelectorAll('.navbar-links a[href^="#"]');
+const sectionIds = ['home', 'overview', 'dates', 'cfp', 'speakers', 'organizers'];
+const navbarHeight = document.querySelector('.navbar').offsetHeight;
+
+function setActive() {
+  let current = sectionIds[0];
+  for (const id of sectionIds) {
+    const el = document.getElementById(id);
+    if (el && el.getBoundingClientRect().top <= navbarHeight + 20) current = id;
+  }
+  // map overview → home since there's no overview nav link
+  if (current === 'overview') current = 'home';
+  navLinks.forEach(link => {
+    link.classList.toggle('active', link.getAttribute('href') === '#' + current);
+  });
+}
+
+window.addEventListener('scroll', setActive);
+setActive();
+
+fetch('data/overview.json')
+  .then(r => r.json())
+  .then(data => {
+    document.getElementById('overview-content').innerHTML = `
+      <p>${data.welcome}</p>
+      <p style="line-height:1.8;color:#555;">${data.goals}</p>`;
+
+    document.getElementById('cfp-topics').innerHTML = `
+      <h3 style="font-size:18px;font-weight:700;color:#1a1a1a;margin:0 0 12px;">Scope</h3>
+      <p style="margin:0 0 10px">${data.scope_intro}</p>
+      <ul class="overview-block">${data.scope.map(s => `<li><span class="scope-category">${s.category}.</span> ${s.description}</li>`).join('')}</ul>
+      <p style="line-height:1.8;color:#555;margin-top:20px;">${data.after_scope}</p>`;
+
+    document.getElementById('cfp-submission').innerHTML = `
+      <h3 style="font-size:18px;font-weight:700;color:#1a1a1a;margin:32px 0 12px;">Submission Site</h3>
+      <p style="line-height:1.8;color:#555;">${data.submission_site}</p>
+      <h3 style="font-size:18px;font-weight:700;color:#1a1a1a;margin:32px 0 12px;">Submission Types</h3>
+      <ul class="overview-block">${data.submission_types.map(t => `<li><span class="guideline-category">${t.type}.</span> ${t.description}</li>`).join('')}</ul>
+      <h3 style="font-size:18px;font-weight:700;color:#1a1a1a;margin:24px 0 12px;">Submission Guidelines</h3>
+      <ul class="overview-block">${data.submission_guidelines.map(g => `<li><span class="guideline-category">${g.label}.</span> ${g.text}</li>`).join('')}</ul>`;
+  });
+
+fetch('data/speakers.json')
+  .then(r => r.json())
+  .then(data => {
+    document.getElementById('speakers-list').innerHTML = data.map(makeSpeakerCard).join('');
+  });
+
+fetch('data/organizers.json')
+  .then(r => r.json())
+  .then(data => {
+    document.getElementById('organizers-row1').innerHTML = data.row1.map(makeCard).join('');
+    document.getElementById('organizers-row2').innerHTML = data.row2.map(makeCard).join('');
+  });
+</script>
+
+</body>
+</html>
