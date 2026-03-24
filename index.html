@@ -526,7 +526,7 @@ Tensor Methods Workshop · KDD 2026 · Jeju Island, South Korea
 <script>
 function makeSpeakerCard(person) {
   return `<div class="speaker-card">
-    <a href="${person.url}"><img src="${person.image}" alt="${person.name}"></a>
+    <a href="${person.url}" target="_blank" rel="noopener"><img src="${person.image}" alt="${person.name}"></a>
     <div class="speaker-info">
       <div class="speaker-name">${person.name}</div>
       <div class="speaker-affil">${person.affiliation}</div>
@@ -537,7 +537,7 @@ function makeSpeakerCard(person) {
 
 function makeCard(person) {
   return `<div class="organizer-card">
-    <a href="${person.url}"><img src="${person.image}" alt="${person.name}"></a>
+    <a href="${person.url}" target="_blank" rel="noopener"><img src="${person.image}" alt="${person.name}"></a>
     <div class="organizer-name">${person.name}</div>
     <div class="organizer-affil">${person.position}</div>
     <div class="organizer-affil">${person.affiliation}</div>
