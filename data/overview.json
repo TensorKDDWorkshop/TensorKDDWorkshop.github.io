@@ -27,12 +27,8 @@
   "after_scope": "Accepted papers will be presented as posters, with a subset selected for oral presentations. The workshop will take place in person at KDD 2026, and authors of accepted papers are required to register and attend the conference in person. This workshop is non-archival; accepted papers will not appear in the KDD proceedings.",
   "submission_types": [
     {
-      "type": "Regular Papers",
-      "description": "Up to 9 pages (excluding references). Original research contributions."
-    },
-    {
       "type": "Short Papers",
-      "description": "Up to 4 pages (excluding references). Work-in-progress or position papers."
+      "description": "Up to 4 pages (excluding references)."
     }
   ],
   "submission_guidelines": [
