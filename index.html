@@ -588,8 +588,6 @@ fetch('data/overview.json')
     document.getElementById('cfp-submission').innerHTML = `
       <h3 style="font-size:18px;font-weight:700;color:#1a1a1a;margin:32px 0 12px;">Submission Site</h3>
       <p style="line-height:1.8;color:#555;">${data.submission_site}</p>
-      <h3 style="font-size:18px;font-weight:700;color:#1a1a1a;margin:32px 0 12px;">Submission Types</h3>
-      <ul class="overview-block">${data.submission_types.map(t => `<li><span class="guideline-category">${t.type}.</span> ${t.description}</li>`).join('')}</ul>
       <h3 style="font-size:18px;font-weight:700;color:#1a1a1a;margin:24px 0 12px;">Submission Guidelines</h3>
       <ul class="overview-block">${data.submission_guidelines.map(g => `<li><span class="guideline-category">${g.label}.</span> ${g.text}</li>`).join('')}</ul>`;
   });

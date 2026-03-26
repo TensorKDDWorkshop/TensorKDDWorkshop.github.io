@@ -25,13 +25,12 @@
     }
   ],
   "after_scope": "Accepted papers will be presented as posters, with a subset selected for oral presentations. The workshop will take place in person at KDD 2026, and authors of accepted papers are required to register and attend the conference in person. This workshop is non-archival; accepted papers will not appear in the KDD proceedings.",
-  "submission_types": [
-    {
-      "type": "Short Papers",
-      "description": "Up to 4 pages (excluding references). Accepted papers may include one additional page in the camera-ready version."
-    }
-  ],
+  "submission_types": [],
   "submission_guidelines": [
+    {
+      "label": "Types",
+      "text": "Up to 4 pages (excluding references). Accepted papers may include one additional page in the camera-ready version."
+    },
     {
       "label": "Formatting",
       "text": "All submissions must be in PDF format and follow the <a href='https://www.acm.org/publications/proceedings-template' target='_blank'>KDD 2026 formatting guidelines</a>."
