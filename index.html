@@ -268,7 +268,15 @@ body {
 .speaker-talk {
   font-size: inherit;
   color: #555;
-  font-style: italic;
+  font-style: normal;
+  font-weight: 600;
+}
+
+.speaker-abstract {
+  font-size: 15px;
+  color: #777;
+  line-height: 1.7;
+  margin-top: 8px;
 }
 
 /* ── Organizers ── */
@@ -532,8 +540,9 @@ function makeSpeakerCard(person) {
     <a href="${person.url}" target="_blank" rel="noopener"><img src="${person.image}" alt="${person.name}"></a>
     <div class="speaker-info">
       <div class="speaker-name">${person.name}</div>
-      <div class="speaker-affil">${person.affiliation}</div>
+      <div class="speaker-affil">${person.position ? person.position + ', ' : ''}${person.affiliation}</div>
       <div class="speaker-talk">${person.talk}</div>
+      ${person.abstract ? `<div class="speaker-abstract">${person.abstract}</div>` : ''}
     </div>
   </div>`;
 }
