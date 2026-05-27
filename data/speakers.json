@@ -15,5 +15,13 @@
     "url": "https://grigoris.ece.wisc.edu/",
     "talk": "Are activation functions required for learning in all deep networks?",
     "abstract": "Activation functions play a pivotal role in deep neural networks, enabling them to tackle complex tasks like image recognition. However, activation functions also introduce significant challenges for deep learning theory, network dynamics analysis, and properties such as interpretability and privacy preservation. In this talk, we revisit the necessity of activation functions across various scenarios. Specifically, we explore expressing network outputs through high-order interactions among input elements using multilinear algebra. Interestingly, tensors emerge naturally in this scenario and enable us certain flexibility in determining what types of interactions we want and how they are captured. Now, the question becomes: Are tensors alone sufficient for effective learning (e.g. in ImageNet-level recognition)?"
+  },
+  {
+    "name": "Xiao Fu",
+    "position": "Associate Professor",
+    "affiliation": "Oregon State University",
+    "image": "images/xiao_fu.jpeg",
+    "url": "https://web.engr.oregonstate.edu/~fuxia/",
+    "talk": "Tensor Signal Processing Meets AI"
   }
 ]
