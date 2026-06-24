@@ -30,7 +30,7 @@ body {
 }
 
 .navbar-inner {
-  max-width: 880px;
+  max-width: 1040px;
   margin: auto;
   padding: 0 40px;
   display: flex;
@@ -123,7 +123,7 @@ body {
 }
 
 .section-inner {
-  max-width: 880px;
+  max-width: 1040px;
   margin: auto;
   text-align: center;
 }
@@ -226,6 +226,55 @@ body {
   padding-left: 20px;
 }
 
+/* ── Accepted Papers ── */
+.papers-list {
+  text-align: left;
+}
+
+.paper-item {
+  padding: 18px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.paper-item:last-child { border-bottom: none; }
+
+.paper-title-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 5px;
+}
+
+.paper-title {
+  font-weight: 600;
+  color: #1a1a1a;
+  line-height: 1.5;
+}
+
+.paper-badge {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.badge-oral {
+  background: #e8f5eb;
+  color: #3a7d44;
+}
+
+.badge-poster {
+  background: #f0f0f0;
+  color: #666;
+}
+
+.paper-authors {
+  font-size: 15px;
+  color: #888;
+}
+
 /* ── Speakers ── */
 .speakers-list {
   display: flex;
@@ -320,6 +369,38 @@ body {
 }
 
 .section a { color: #5A9F67; }
+
+/* ── Schedule ── */
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: inherit;
+}
+
+.schedule-table tr {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.schedule-table tr:last-child { border-bottom: none; }
+
+.schedule-table td {
+  padding: 12px 0;
+  vertical-align: top;
+}
+
+.schedule-time {
+  color: #888;
+  white-space: nowrap;
+  padding-right: 28px;
+  width: 120px;
+  font-size: 15px;
+}
+
+.schedule-event {
+  color: #1a1a1a;
+  font-weight: 500;
+}
 
 /* ── Footer ── */
 .footer {
@@ -461,6 +542,8 @@ body {
 <div class="navbar-links" id="navbar-links">
 <a href="#home">Home</a>
 <a href="#dates">Dates</a>
+<a href="#papers">Accepted Papers</a>
+<a href="#schedule">Schedule</a>
 <a href="#cfp">Call for Papers</a>
 <a href="#speakers">Speakers</a>
 <a href="#organizers">Organizers</a>
@@ -482,6 +565,67 @@ body {
 <div class="section-inner">
 <h2>Welcome to TensorKDD!</h2>
 <div id="overview-content"></div>
+</div>
+</div>
+
+<!-- Accepted Papers -->
+<div class="section" id="papers" style="background:#fafafa;">
+<div class="section-inner">
+<h2>Accepted Papers</h2>
+<div class="papers-list">
+  <div class="paper-item">
+    <div class="paper-title-row">
+      <div class="paper-title"><a href="https://openreview.net/forum?id=uxbKERhfa7" target="_blank" rel="noopener">A Tensor-Based Multilayer Graph Representation Learning</a></div>
+      <span class="paper-badge badge-oral">Oral</span>
+    </div>
+    <div class="paper-authors">Maolin Wang</div>
+  </div>
+  <div class="paper-item">
+    <div class="paper-title-row">
+      <div class="paper-title"><a href="https://openreview.net/forum?id=H5NX243IUP" target="_blank" rel="noopener">Rethinking the Role of Tensor Decompositions in Post-Training LLM Compression</a></div>
+      <span class="paper-badge badge-poster">Poster</span>
+    </div>
+    <div class="paper-authors">Artur Zagitov, Alexander Miasnikov, Maxim Krutikov, Vladimir Aletov, Gleb Molodtsov, Nail Bashirov, Artem Tsedenov, Aleksandr Beznosikov</div>
+  </div>
+  <div class="paper-item">
+    <div class="paper-title-row">
+      <div class="paper-title"><a href="https://openreview.net/forum?id=UdFAvWC1Ph" target="_blank" rel="noopener">Revealing Subject-Specific Temporal Trajectories From Longitudinal Data</a></div>
+      <span class="paper-badge badge-oral">Oral</span>
+    </div>
+    <div class="paper-authors">Christos Chatzis, David Horner, Rasmus Bro, Ann-Marie M Schoos, Morten Arendt Rasmussen, Evrim Acar</div>
+  </div>
+  <div class="paper-item">
+    <div class="paper-title-row">
+      <div class="paper-title"><a href="https://openreview.net/forum?id=T15YnsaP1b" target="_blank" rel="noopener">Spectral Rank Certification for Foundation Model Adapters</a></div>
+      <span class="paper-badge badge-poster">Poster</span>
+    </div>
+    <div class="paper-authors">Mohammed Ahnouch, Elaachak Lotfi</div>
+  </div>
+  <div class="paper-item">
+    <div class="paper-title-row">
+      <div class="paper-title"><a href="https://openreview.net/forum?id=RhS3Dz4uEq" target="_blank" rel="noopener">Why Uncertainty Networks Resist Tensor Unification: Crisis-Specific Low-Rank Structure in Financial Systemic Risk</a></div>
+      <span class="paper-badge badge-poster">Poster</span>
+    </div>
+    <div class="paper-authors">Jihwan Woo</div>
+  </div>
+</div>
+</div>
+</div>
+
+<!-- Schedule -->
+<div class="section" id="schedule">
+<div class="section-inner">
+<h2>Schedule</h2>
+<table class="schedule-table">
+  <tr><td class="schedule-time">13:00–13:05</td><td class="schedule-event">Opening remarks &amp; workshop goals</td></tr>
+  <tr><td class="schedule-time">13:05–13:50</td><td class="schedule-event">Invited Talk: Prof. Grigorios Chrysos</td></tr>
+  <tr><td class="schedule-time">13:50–14:35</td><td class="schedule-event">Invited Talk: Prof. Xiao Fu</td></tr>
+  <tr><td class="schedule-time">14:35–14:50</td><td class="schedule-event">Oral Presentation: A Tensor-Based Multilayer Graph Representation Learning</td></tr>
+  <tr><td class="schedule-time">15:50–15:05</td><td class="schedule-event">Oral Presentation: Revealing Subject-Specific Temporal Trajectories From Longitudinal Data</td></tr>
+  <tr><td class="schedule-time">15:05–15:30</td><td class="schedule-event">Coffee break</td></tr>
+  <tr><td class="schedule-time">15:30–16:30</td><td class="schedule-event">Poster Session</td></tr>
+  <tr><td class="schedule-time">16:30–16:50</td><td class="schedule-event">Closing Remarks</td></tr>
+</table>
 </div>
 </div>
 
@@ -512,7 +656,7 @@ body {
 </div>
 
 <!-- Invited Speakers -->
-<div class="section" id="speakers" style="background:#fafafa;">
+<div class="section" id="speakers" style="background:white;">
 <div class="section-inner">
 <h2>Invited Speakers</h2>
 <div class="speakers-list" id="speakers-list"></div>
@@ -557,7 +701,7 @@ function makeCard(person) {
 }
 
 const navLinks = document.querySelectorAll('.navbar-links a[href^="#"]');
-const sectionIds = ['home', 'overview', 'dates', 'cfp', 'speakers', 'organizers'];
+const sectionIds = ['home', 'overview', 'papers', 'schedule', 'dates', 'cfp', 'speakers', 'organizers'];
 const navbarHeight = document.querySelector('.navbar').offsetHeight;
 
 function setActive() {
